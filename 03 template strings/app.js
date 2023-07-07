@@ -35,15 +35,17 @@ result.innerHTML = `
 
 const author = 'some author';
 const statement = 'some statement';
+const statement2 = 'some statement2';
 
-const quote = highlight`here is the ${statement} by ${author} and it could not be more true`;
-console.log(quote);
-
-result.innerHTML = quote;
+const quote = highlight`here is the ${statement} by ${author} and it could not be more true ${statement2}`;
 
 function highlight(text, ...vars) {
-  const awesomeText = text.map(function (item, index) {
-    return `${item} <strong class="blue">${vars[index] || ''}</strong> `;
-  });
-  return awesomeText.join('');
+  const awesomeText = text
+    .map(function (item, index) {
+      return `${item} <strong class="blue">${vars[index] || ''}</strong>`;
+    })
+    .join('');
+  return awesomeText;
 }
+
+result.innerHTML = quote;
