@@ -11,3 +11,8 @@ let second = 'tim';
 
 [second, first] = [first, second];
 console.log(second);
+
+//array from
+
+const udemy = 'udemy';
+console.log(Array.from(udemy));
